@@ -1,0 +1,50 @@
+{
+  "name": "worldwide-tax-calculator",
+  "version": "1.0.0",
+  "description": "Worldwide Tax Calculator \u2014 desktop app (Electron)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --x64",
+    "dist:mac": "electron-builder --mac",
+    "dist:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.yourname.worldwidetax",
+    "productName": "Worldwide Tax Calculator",
+    "files": [
+      "index.html",
+      "main.js",
+      "preload.js",
+      "assets/**"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
+  "author": "Yaseen",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
